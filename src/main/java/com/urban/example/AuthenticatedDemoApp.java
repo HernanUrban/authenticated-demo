@@ -36,10 +36,8 @@ public class AuthenticatedDemoApp extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
             .antMatchers(HttpMethod.POST, "/login", "/user/register")
             .permitAll()
-            .antMatchers(HttpMethod.GET, "/demo/free", "/oai/api-docs", "/configuration/ui",
-                    "/swagger-resources",
-                    "/configuration/security", "/swagger-ui.html", "/webjars/**",
-                    "/swagger-resources/configuration/ui", "/swagger-resources/configuration/security")
+            .antMatchers(HttpMethod.GET, "/demo/free", "/oai/api-docs",
+                    "/swagger-resources/**", "/swagger-ui.html")
             .permitAll()
             .anyRequest()
             .authenticated()
